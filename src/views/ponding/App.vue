@@ -1,5 +1,10 @@
 <template>
   <div id="app">
+    <p>
+      有一组不同高度的台阶，由一个整数数组表示，数组中每个数是台阶的高度，<br>
+      当开始下雨了(水足够多的)，台阶之间的水坑会积多少水？<br>
+      如[0,1,0,2,1,0,1,3,2,1,2,1] 返回积水量 6。
+    </p>
     <v-stage :config="configStage">
       <v-layer>
         <v-rect :ref=" 'rect'+ item.w + '_' +item.h " :config="item" v-for="(item,key) in rectList" :key="key"></v-rect>
@@ -29,7 +34,8 @@ export default {
     
   },
   created() {
-    window.$vue=this;
+    this.inputStr = '0,1,0,2,1,0,1,3,2,1,2,1';
+    this.start();
   },
   computed: {
     configStage() {
