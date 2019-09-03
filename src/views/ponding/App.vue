@@ -89,8 +89,11 @@ export default {
         }
       };
       this.rectList = rectArr;
-      this.$nextTick(()=>{
-        this.drawStage();
+      return new Promise(resolve=>{
+        this.$nextTick(()=>{
+          this.drawStage();
+          resolve();
+        })
       })
     },
     async resetData() {
@@ -159,7 +162,8 @@ export default {
     },
 
     getRect(x,y) {
-      return this.$refs['rect'+ x + '_' + y][0].getNode();
+      let ref_name = 'rect'+ x + '_' + y;
+      return this.$refs[ref_name][0].getNode();
     },
 
     /**
