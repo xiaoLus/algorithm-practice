@@ -8,7 +8,7 @@ viewFiles.forEach(itemName=>{
     // page 的入口
     entry: `src/views/${itemName}/main.js`,
     // 模板来源
-    template: `public/${itemName}.html`,
+    template: `public/template.html`,
     // 在 dist/ponding.html 的输出
     filename: `${itemName}.html`,
     // 当使用 title 选项时，
@@ -44,7 +44,7 @@ module.exports = {
     resolve: {
       alias: {
         '@assets': path.resolve('src/assets'),
-        '@components': path.resolve('src/components')
+        '@components': path.resolve('src/components'),
       }
     }
   }
