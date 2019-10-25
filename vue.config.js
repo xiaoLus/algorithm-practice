@@ -8,7 +8,7 @@ viewFiles.forEach(itemName=>{
     // page 的入口
     entry: `src/views/${itemName}/main.js`,
     // 模板来源
-    template: `public/template.html`,
+    template: `template/template.html`,
     // 在 dist/ponding.html 的输出
     filename: `${itemName}.html`,
     // 当使用 title 选项时，
